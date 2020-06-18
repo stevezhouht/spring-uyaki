@@ -1,0 +1,4 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+  com.uyaki.exception.common.UnifiedExceptionHandler,\
+  com.uyaki.exception.common.i18n.ResourceBundleConfig,\
+  com.uyaki.exception.common.i18n.I18nComponent
