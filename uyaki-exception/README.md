@@ -32,17 +32,7 @@ public String sayHello() {
 
 #### Assert声明核心方法
 
-<script src='https://unpkg.com/mermaid@7.1.2/dist/mermaid.min.js'></script>
-<script>mermaid.initialize({startOnLoad:true});</script>
-
-<div class="mermaid">
-graph LR
-    Assert(Assert)
-    newException>newException方法]
-    assertIsNull>default assertIsNull 等方法]
-    Assert-->|声明|newException
-    Assert-->|默认实现|assertIsNull
-</div>
+![](https://cdn.jsdelivr.net/gh/uyaki/pic-cloud/img/20200618143237.png)
 
 ```java
 public interface Assert {
@@ -99,17 +89,7 @@ public interface BusinessExceptionAssert extends IResponseEnum, Assert {
 
 #### BusinessErrorCodeEnum实现断言抛出异常
 
-
-<div class="mermaid">
-graph TB
-    BusinessErrorCodeEnum(BusinessErrorCodeEnum)
-    BusinessExceptionAssert(BusinessExceptionAssert)
-    IResponseEnum(IResponseEnum)
-    Assert(Assert)
-    BusinessErrorCodeEnum-.->|implements|BusinessExceptionAssert
-    BusinessExceptionAssert-->|extends|Assert
-    BusinessExceptionAssert-->|extends|IResponseEnum
-</div>
+![](https://cdn.jsdelivr.net/gh/uyaki/pic-cloud/img/20200618143312.png)
 
 即可使用BusinessErrorCodeEnum.XXXX.assertIsNull(xxx)实现异常抛出
 
