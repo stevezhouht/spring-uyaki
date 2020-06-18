@@ -1,6 +1,8 @@
-# 使用
+# uyaki-exception
 
-## 引入依赖
+## Usage
+
+### 引入依赖
 
 ```xml
 <parent>
@@ -11,7 +13,7 @@
 </parent>
 ```
 
-## 使用示例
+### 使用示例
 
 ```java
 @GetMapping("/hello")
@@ -30,14 +32,17 @@ public String sayHello() {
 
 #### Assert声明核心方法
 
-```mermaid
+<script src='https://unpkg.com/mermaid@7.1.2/dist/mermaid.min.js'></script>
+<script>mermaid.initialize({startOnLoad:true});</script>
+
+<div class="mermaid">
 graph LR
     Assert(Assert)
     newException>newException方法]
     assertIsNull>default assertIsNull 等方法]
     Assert-->|声明|newException
     Assert-->|默认实现|assertIsNull
-```
+</div>
 
 ```java
 public interface Assert {
@@ -94,7 +99,8 @@ public interface BusinessExceptionAssert extends IResponseEnum, Assert {
 
 #### BusinessErrorCodeEnum实现断言抛出异常
 
-```mermaid
+
+<div class="mermaid">
 graph TB
     BusinessErrorCodeEnum(BusinessErrorCodeEnum)
     BusinessExceptionAssert(BusinessExceptionAssert)
@@ -103,7 +109,7 @@ graph TB
     BusinessErrorCodeEnum-.->|implements|BusinessExceptionAssert
     BusinessExceptionAssert-->|extends|Assert
     BusinessExceptionAssert-->|extends|IResponseEnum
-```
+</div>
 
 即可使用BusinessErrorCodeEnum.XXXX.assertIsNull(xxx)实现异常抛出
 
